@@ -1,0 +1,13 @@
+
+<br>
+<% if session[:user_id] %>
+You are logged in.
+<% else %>
+You are not logged in.
+<% end %>
+<br>
+
+<h1>Television channels:</h1>
+<% @channels.each do |k| %>
+<h2><a href="/channel/<%=k.id%>"><%= k.name %></a></h2>
+<% end %>

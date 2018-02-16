@@ -1,0 +1,20 @@
+
+<h1><%= @channel.name %></h1><br>
+Callsign:
+<h2><%= @channel.callsign %></h2>
+Price per month:
+<h3>$<%= @channel.price_per_month %></h3>
+<br>
+Total number of subscribers:
+<br><strong><%= @subscribers.count %></strong>
+<br>
+
+<% if @user_channel %>
+	<form action="/channel/update/<%=@channel.id%>" method="post">
+		<input type="submit" name="unsubscribe" value="unsubscribe">
+	</form>
+<% elsif !@user_channel && session[:user_id] %>
+	<form action="/channel/update/<%=@channel.id%>" method="post">
+		<input type="submit" name="subscribe" value="subscribe">
+	</form>
+<% end %>

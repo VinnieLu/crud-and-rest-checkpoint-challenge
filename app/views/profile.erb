@@ -1,0 +1,14 @@
+<h1> Welcome, <%= @user.first_name %> <%= @user.last_name %>!</h1><br>
+<h2>You watch these channels:</h2>
+<br>
+
+<% @user.channels.each do |k| %>
+<h2><%= k.name %></h2>
+<h4>$<%= k.price_per_month %> per month</h4>
+<% end %>
+
+<% total = 0 %>
+<% @user.channels.each do |t| %>
+<% total += t.price_per_month %>
+<% end %>
+<br>Total cost for channels is: $<%= total %> 

@@ -1,0 +1,17 @@
+<h1>Register as a new user:</h1><br>
+
+<% if @error %>
+<%= @error %>
+<% end %><br><br>
+
+<form action="/user/create" method="post">
+  <label for="first_name">First name:</label><br>
+    <input type="text" name="first_name"><br>
+  <label for="last_name">Last name:</label><br>
+    <input type="text" name="last_name"><br>
+  <label for="email">Email:</label><br>
+    <input type="text" name="email"><br>
+  <label for="password">Password:</label><br>
+    <input type="password" name="password"><br>
+    <input type="submit" value="Create user">
+</form>
